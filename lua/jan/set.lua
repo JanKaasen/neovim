@@ -2,6 +2,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 
+
 vim.api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight when yanking (copying) text',
     group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
@@ -41,3 +42,4 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         vim.lsp.buf.format()
     end,
 })
+
