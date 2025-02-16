@@ -11,7 +11,17 @@ return {
     },
 
     config = function()
-        require('telescope').setup({})
+        require('telescope').setup({
+            defaults = {
+                layout_strategy = 'center',
+                preview = false,
+                layout_config = {
+                    prompt_position = "top",
+                },
+                sorting_strategy = "ascending",
+                winblend = 0,
+            }
+        })
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = 'find files' })
@@ -28,7 +38,7 @@ return {
         vim.keymap.set('n', '<leader>ps', function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end, { desc = 'search with grep' })
-        vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = 'search help'})
+        vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = 'search help' })
         pcall(require('telescope').load_extension, 'fzf')
         pcall(require('telescope').load_extension, 'ui-select')
     end

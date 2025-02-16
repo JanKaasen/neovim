@@ -45,14 +45,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         vim.lsp.buf.format()
     end,
 })
-
-local group = vim.api.nvim_create_augroup("UserColorScheme", { clear = true })
-
--- Set up autocommand for transparent background
-vim.api.nvim_create_autocmd("ColorScheme", {
-    group = group,
-    callback = function()
-        vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    end,
-})
