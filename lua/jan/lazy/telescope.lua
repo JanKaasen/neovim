@@ -13,7 +13,7 @@ return {
     config = function()
         require('telescope').setup({
             defaults = {
-                layout_strategy = 'center',
+                layout_strategy = 'vertical',
                 preview = false,
                 layout_config = {
                     prompt_position = "top",
