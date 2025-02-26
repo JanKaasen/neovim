@@ -6,12 +6,12 @@ return {
     --        vim.cmd.colorscheme "nord"
     --    end,
 
-    'sainnhe/sonokai',
+    "sainnhe/everforest",
     lazy = false,
     priority = 1000,
     config = function()
-        vim.g.sonokai_transparent_background = 1
-        vim.g.sonokai_enable_italic = true
-        vim.cmd.colorscheme('sonokai')
+        vim.g.everforest_transparent_background = 1
+        vim.g.everforest_enable_italic = true
+        vim.cmd.colorscheme('everforest')
     end
 }
