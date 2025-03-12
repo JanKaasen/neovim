@@ -23,7 +23,11 @@ return {
             cmp_lsp.default_capabilities())
 
         require('java').setup()
-        require('lspconfig').jdtls.setup({})
+        require('lspconfig').jdtls.setup({
+            handlers = {
+                ["$/progress"] = function(_, result, ctx) end,
+            },
+        })
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -34,7 +38,6 @@ return {
             },
             handlers = {
                 function(server_name) -- default handler (optional)
-
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
