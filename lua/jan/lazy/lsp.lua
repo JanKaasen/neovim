@@ -26,7 +26,7 @@ return {
         require('lspconfig').jdtls.setup({
             handlers = {
                 ["$/progress"] = function(_, result, ctx) end,
-            },
+            }
         })
         require("fidget").setup({})
         require("mason").setup()
