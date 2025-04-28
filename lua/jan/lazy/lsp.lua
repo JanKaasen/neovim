@@ -28,6 +28,7 @@ return {
                 ["$/progress"] = function(_, result, ctx) end,
             }
         })
+
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -76,8 +77,10 @@ return {
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
+                { name = 'vim-dadbod-completion' },
             }, {
                 { name = 'buffer' },
+                { name = 'path' },
             })
         })
 
