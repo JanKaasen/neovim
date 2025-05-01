@@ -50,23 +50,11 @@ return {
                 dark_variant = 'moon', -- Optional: choose dark variant
                 bold_vert_split = false,
                 dim_nc_background = false,
-                disable_background = false,
-                disable_float_background = false,
+                disable_background = true,
+                disable_float_background = true,
                 disable_italics = false,
 
                 -- This is the key setting for a pure black background:
-                highlight_groups = {
-                    Normal = { bg = "#000000" },
-                    NormalNC = { bg = "#000000" },
-                    NormalFloat = { bg = "#000000" },
-                    SignColumn = { bg = "#000000" },
-
-                    -- Optional: modify other background elements
-                    CursorLine = { bg = "#0a0a0a" },
-                    StatusLine = { bg = "#000000" },
-                    StatusLineNC = { bg = "#000000" },
-                    VertSplit = { bg = "#000000" },
-                }
             })
             vim.cmd("colorscheme rose-pine")
         end
