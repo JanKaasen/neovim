@@ -22,13 +22,6 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
-        require('java').setup()
-        require('lspconfig').jdtls.setup({
-            handlers = {
-                ["$/progress"] = function(_, result, ctx) end,
-            }
-        })
-
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({

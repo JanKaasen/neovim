@@ -1,1 +1,7 @@
-return {'nvim-java/nvim-java'}
+return {
+    'mfussenegger/nvim-jdtls',
+    dependencies = {
+        'neovim/nvim-lspconfig',
+        'mfussenegger/nvim-dap', -- For debugging
+    },
+}
