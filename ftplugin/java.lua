@@ -92,7 +92,7 @@ local config = {
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         -- Key mappings
-        local bufopts = { noremap=true, silent=true, buffer=bufnr }
+        local bufopts = { noremap = true, silent = true, buffer = bufnr }
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -108,12 +108,25 @@ local config = {
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
         vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
-        
+
         -- JDTLS-specific commands
         vim.keymap.set('n', '<leader>jo', jdtls.organize_imports, bufopts)
         vim.keymap.set('n', '<leader>jt', jdtls.test_class, bufopts)
         vim.keymap.set('n', '<leader>jn', jdtls.test_nearest_method, bufopts)
         vim.keymap.set('n', '<leader>jc', function() jdtls.compile("incremental") end, bufopts)
+
+        vim.keymap.set('n', '<leader>jm', function()
+            jdtls.test_nearest_method()
+        end, { buffer = bufnr, desc = "Run Test Method" })
+
+        vim.keymap.set('n', '<leader>jr', function()
+            require('jdtls').run_main()
+        end, { buffer = bufnr, desc = "Run Java Main" })
+
+        -- For code actions grouped by kind
+        vim.keymap.set('n', '<leader>ja', function()
+            require('jdtls').code_action()
+        end, { buffer = bufnr, desc = "Code Actions" })
     end,
 }
 
