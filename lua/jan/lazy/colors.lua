@@ -1,75 +1,12 @@
 return {
-    --    'shaunsingh/nord.nvim',
-    --    name = "nord",
-    --    config = function()
-    --        vim.g.nord_disable_background = true
-    --        vim.cmd.colorscheme "nord"
-    --    end,
-
-    -- "rebelot/kanagawa.nvim",
-    -- priority = 10000,
-    -- name = "kanagawa",
-    -- config = function()
-    --     require('kanagawa').setup({
-    --         compile = false,  -- enable compiling the colorscheme
-    --         undercurl = true, -- enable undercurls
-    --         commentStyle = { italic = true },
-    --         functionStyle = {},
-    --         keywordStyle = { italic = true },
-    --         statementStyle = { bold = true },
-    --         typeStyle = {},
-    --         transparent = false,   -- do not set background color
-    --         dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
-    --         terminalColors = true, -- define vim.g.terminal_color_{0,17}
-    --         colors = {             -- add/modify theme and palette colors
-    --             palette = {},
-    --             theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-    --         },
-    --         overrides = function(colors) -- add/modify highlights
-    --             return {}
-    --         end,
-    --         theme = "dragon",    -- Load "wave" theme when 'background' option is not set
-    --         background = {     -- map the value of 'background' option to a theme
-    --             dark = "wave", -- try "dragon" !
-    --             light = "lotus"
-    --         },
-    --     })
-
-    --     -- setup must be called before loading
-    --     vim.cmd("colorscheme kanagawa-dragon")
-    -- end
-
-    -- Lazy
-    -- lua/plugins/rose-pine.lua
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function()
-            require('rose-pine').setup({
-                variant = 'moon',  -- Optional: choose base variant (moon, dawn, or main)
-                dark_variant = 'moon', -- Optional: choose dark variant
-                bold_vert_split = false,
-                dim_nc_background = false,
-                disable_background = false,
-                disable_float_background = false,
-                disable_italics = false,
-
-                -- This is the key setting for a pure black background:
-                highlight_groups = {
-                    Normal = { bg = "#000000" },
-                    NormalNC = { bg = "#000000" },
-                    NormalFloat = { bg = "#000000" },
-                    SignColumn = { bg = "#000000" },
-
-                    -- Optional: modify other background elements
-                    CursorLine = { bg = "#0a0a0a" },
-                    StatusLine = { bg = "#000000" },
-                    StatusLineNC = { bg = "#000000" },
-                    VertSplit = { bg = "#000000" },
-                }
-            })
-            vim.cmd("colorscheme rose-pine")
-        end
-    }
-
+    "neanias/everforest-nvim",
+    version = false,
+    lazy = false,
+    priority = 1000,
+    config = function()
+        require("everforest").setup({
+            transparent_background_level = 100,
+        })
+        vim.cmd([[colorscheme everforest]])
+    end,
 }
