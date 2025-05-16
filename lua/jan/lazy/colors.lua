@@ -1,28 +1,50 @@
 return {
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    priority = 1000, -- Make sure it loads early
-    config = function()
-      require("rose-pine").setup({
-        variant = "main", -- Choose main variant (options: 'main', 'moon', or 'dawn')
-        dark_variant = "main", -- Dark theme variant
-        bold_vert_split = false,
-        dim_nc_background = false,
-        disable_background = true, -- Set to true for transparent background
-        disable_float_background = true, -- Transparent floating windows
-        disable_italics = false,
-        
-        -- You can customize groups of highlights
-        highlight_groups = {
-          -- Customize specific highlight groups if needed
-          -- For example:
-          -- StatusLine = { fg = "love", bg = "love", blend = 10 },
-        },
-      })
-      
-      -- Set colorscheme
-      vim.cmd("colorscheme rose-pine")
-    end,
-  },
+    -- Gruvbox Material
+    {
+        "sainnhe/gruvbox-material",
+        lazy = false,
+        priority = 1000, -- Load this plugin early during startup
+        config = function()
+            -- Set colorscheme related options before setting the colorscheme
+
+            -- Contrast options: 'hard', 'medium'(default), 'soft'
+            vim.g.gruvbox_material_background = 'medium'
+
+            -- 'material'(default), 'mix', 'original'
+            vim.g.gruvbox_material_palette = 'material'
+
+            -- Styles: 'default'(default), 'visual', 'statusline', 'tabline', 'terminal'
+            vim.g.gruvbox_material_ui_contrast = 'high'
+
+            -- Enabling/disabling bold style
+            vim.g.gruvbox_material_enable_bold = 1
+
+            -- Enabling/disabling italic style
+            vim.g.gruvbox_material_enable_italic = 1
+
+            -- Cursor color (override cursorline)
+            vim.g.gruvbox_material_cursor = 'auto'
+
+            -- More natural and consistent sign column
+            vim.g.gruvbox_material_sign_column_background = 'none'
+
+            -- Show cursor line more prominently
+            vim.g.gruvbox_material_current_word = 'grey background'
+
+            -- Disable italics for comments
+            vim.g.gruvbox_material_disable_italic_comment = 0
+
+            -- Transparent background (set to 1 to enable)
+            vim.g.gruvbox_material_transparent_background = 0
+
+            -- Better visual selection colors
+            vim.g.gruvbox_material_visual = 'grey background'
+
+            -- Improved terminal colors
+            vim.g.gruvbox_material_better_performance = 1
+
+            -- Set the colorscheme
+            vim.cmd([[colorscheme gruvbox-material]])
+        end,
+    },
 }
