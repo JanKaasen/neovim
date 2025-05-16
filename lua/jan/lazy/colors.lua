@@ -8,7 +8,7 @@ return {
             -- Set colorscheme related options before setting the colorscheme
 
             -- Contrast options: 'hard', 'medium'(default), 'soft'
-            vim.g.gruvbox_material_background = 'medium'
+            vim.g.gruvbox_material_background = 'hard'
 
             -- 'material'(default), 'mix', 'original'
             vim.g.gruvbox_material_palette = 'material'
