@@ -47,4 +47,4 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
