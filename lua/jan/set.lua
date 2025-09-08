@@ -1,6 +1,7 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = false
+vim.opt.guicursor = ""
 
 
 vim.api.nvim_create_autocmd('TextYankPost', {
