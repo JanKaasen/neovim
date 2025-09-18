@@ -5,17 +5,17 @@ vim.opt.guicursor = ""
 
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking (copying) text',
-    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+	desc = 'Highlight when yanking (copying) text',
+	group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
-vim.opt.tabstop = 8
-vim.opt.softtabstop = 8
-vim.opt.shiftwidth = 8
-vim.opt.expandtab = false
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
@@ -41,11 +41,20 @@ vim.opt.signcolumn = 'yes'
 
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-    buffer = 0, -- 0 targets the current buffer
-    callback = function()
-        vim.lsp.buf.format()
-    end,
+	buffer = 0, -- 0 targets the current buffer
+	callback = function()
+		vim.lsp.buf.format()
+	end,
 })
 
+-- Enable list mode
+vim.opt.list = true
+
+-- Customize the characters shown for whitespace
+vim.opt.listchars = {
+	tab = '»·',
+	trail = '·',
+	space = '·',
+}
 
 vim.opt.colorcolumn = "100"
