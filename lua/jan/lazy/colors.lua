@@ -1,22 +1,32 @@
 return {
     {
-        "rebelot/kanagawa.nvim",
-        lazy = false,
+        "ellisonleao/gruvbox.nvim",
         priority = 1000,
-        config = function()
-            require('kanagawa').setup({
-                compile = false,
+        config = true,
+        opts =                          -- Default options:
+            require("gruvbox").setup({
+                terminal_colors = true, -- add neovim terminal colors
                 undercurl = true,
-                commentStyle = { italic = true },
-                functionStyle = {},
-                keywordStyle = { italic = true},
-                statementStyle = { bold = true },
-                typeStyle = {},
-                transparent = true,
-                dimInactive = false,
-                terminalColors = true,
-            })
-            vim.cmd("colorscheme kanagawa-dragon")
-        end
+                underline = true,
+                bold = true,
+                italic = {
+                    strings = true,
+                    emphasis = true,
+                    comments = true,
+                    operators = false,
+                    folds = true,
+                },
+                strikethrough = true,
+                invert_selection = false,
+                invert_signs = false,
+                invert_tabline = false,
+                inverse = true,
+                contrast = "hard",
+                palette_overrides = {},
+                overrides = {},
+                dim_inactive = false,
+                transparent_mode = true,
+            }),
+        vim.cmd("colorscheme gruvbox")
     }
 }
