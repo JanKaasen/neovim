@@ -2,10 +2,9 @@ return {
     {
         "ellisonleao/gruvbox.nvim",
         priority = 1000,
-        config = true,
-        opts =                          -- Default options:
+        config = function()
             require("gruvbox").setup({
-                terminal_colors = true, -- add neovim terminal colors
+                terminal_colors = true,
                 undercurl = true,
                 underline = true,
                 bold = true,
@@ -26,7 +25,8 @@ return {
                 overrides = {},
                 dim_inactive = false,
                 transparent_mode = true,
-            }),
-        vim.cmd("colorscheme gruvbox")
+            })
+            vim.cmd("colorscheme gruvbox")
+        end,
     }
 }
