@@ -56,6 +56,7 @@ local config = {
     root_dir = root_dir,
     handlers = {
         ["language/status"] = function(_, _) end,
+        ["$/progress"] = function(_, _) end,
     },
     -- Rest of your configuration...
 }
