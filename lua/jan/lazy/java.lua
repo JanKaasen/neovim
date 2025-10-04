@@ -4,4 +4,5 @@ return {
         'neovim/nvim-lspconfig',
         'mfussenegger/nvim-dap', -- For debugging
     },
+    ft = 'java',
 }
