@@ -38,20 +38,17 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 80
-vim.opt.signcolumn = 'yes'
-
+vim.opt.signcolumn = "yes"
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-    buffer = 0, -- 0 targets the current buffer
-    callback = function()
-        vim.lsp.buf.format()
-    end,
+	buffer = 0, -- 0 targets the current buffer
+	callback = function()
+		vim.lsp.buf.format()
+	end,
 })
 
--- Enable list mode
 --vim.opt.list = true
-
--- Customize the characters shown for whitespace
+--
 --vim.opt.listchars = {
 --    tab = '»·',
 --    trail = '·',
