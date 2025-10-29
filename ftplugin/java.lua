@@ -10,7 +10,7 @@ local java_cmd
 if os_name == "Darwin" then
     -- macOS specific paths
     config_path = jdtls_path .. '/config_mac'
-    java_cmd = '/opt/homebrew/Cellar/openjdk@21/21.0.8/libexec/openjdk.jdk/Contents/Home/bin/java'
+    java_cmd = '/opt/homebrew/Cellar/openjdk@21/21.0.9/libexec/openjdk.jdk/Contents/Home/bin/java'
 elseif os_name == "Linux" then
     -- Linux specific paths
     config_path = jdtls_path .. '/config_linux'
